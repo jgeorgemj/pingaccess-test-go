@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 )
-
+//PA schema to read id,name,port, secure and trustedCertificateGroupID as per the PA api
 func engineListener() *schema.Resource {
 	return &schema.Resource{
 		ReadContext: engineListenerRead,
@@ -47,7 +47,7 @@ func engineListener() *schema.Resource {
 		},
 	}
 }
-
+// Function to read the PA api engine listeners
 func engineListenerRead(ctx context.Context, d *schema.ResourceData, m interface{}) diag.Diagnostics {
 	client := &http.Client{Timeout: 10 * time.Second}
 

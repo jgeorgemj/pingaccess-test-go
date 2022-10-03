@@ -1,4 +1,4 @@
-module pingaccess
+module terraform-provider-pa
 
 go 1.19
 
