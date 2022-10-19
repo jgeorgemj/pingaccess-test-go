@@ -7,13 +7,14 @@ terraform {
     }
   }
 }
-provider "pingaccess" {
+/* provider "pingaccess" {
   username = "administrator"
   password = "2FederateM0re"
+} */
+
+data "pingaccess_enginelistener" "test" {
 }
 
-data "pingaccess_enginelistener" "test" {}
-
 output "testing" {
-  value = data.pingaccess_enginelistener.test.id
+  value = data.pingaccess_enginelistener.test
 }
