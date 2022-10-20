@@ -3,7 +3,7 @@ terraform {
   required_providers {
     pingaccess = {
       version = "1.0.0"
-      source = "hashicorp.com/edu/pa"
+      source = "hashicorp.com/terraform/pingaccess"
     }
   }
 }
