@@ -11,12 +11,14 @@ import (
 )
 
 func main() {
+//  Skip the localhost cert prompt when using local docker instance, might need to remove this in prod
+
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: true}
 	_, err := http.Get("https://localhost:9000/")
 	if err != nil {
 		fmt.Println(err)
 	}
-
+// the main file should be executed as plugin.
 	plugin.Serve(&plugin.ServeOpts{
 		ProviderFunc: func() *schema.Provider {
 			return pingaccess.Provider()

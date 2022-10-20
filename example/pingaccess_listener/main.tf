@@ -12,9 +12,8 @@ terraform {
   password = "2FederateM0re"
 } */
 
-data "pingaccess_enginelistener" "test" {
-}
+data "pingaccess_enginelistener" "test" {}
 
-output "testing" {
+output "test1" {
   value = data.pingaccess_enginelistener.test
 }
